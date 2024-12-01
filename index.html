@@ -1,0 +1,163 @@
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            background-image: url('backgroundhome.jpeg');
+            background-size:100% 100%;
+            background-position: center; 
+            background-repeat: no-repeat; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome-box {
+            width: 600px;
+            padding: 40px; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #a67c52;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #7c4d1e;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #d2691e; 
+            transform: scale(1.2); 
+        }
+
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #d2691e;
+            left: 50%;
+            bottom: -5px;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%; /* Expand underline */
+            left: 0;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.2s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+    
+        .clock {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: rgb(176, 30,206);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="welcome-box">
+        
+        <img src="Aiman.jpg" alt="Your Picture" class="profile-picture">
+        
+        <marquee><h1>Welcome to My Personal Website</h1></marquee>
+        <p>I'm Muhammad Nur'Aiman bin Mohammad Rozli</p>
+        <p> I currently study at UiTM Johor and pursuing in Diploma Information Management.</p>
+        <p>This is my personal website, I will introduce about myself, education and more!</p>
+      <nav>
+            <a href="biodata.html">Biodata</a>
+            <a href="experience.html">Experience</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+        <div class="social-icons">
+        
+            <a href="https://www.instagram.com/nraimanrzli/" target="_blank" aria-label="Instagram">
+                <img src="ig.png" alt="Instagram Icon">
+            </a>
+            <a href="https://www.tiktok.com/@aimanrzli_" target="_blank" aria-label="WhatsApp">
+                <img src="tiktok.png" alt="TIktok Icon">
+            </a>
+        </div>
+
+
+        <body onload="startTime()">
+        
+         <div id="txt"></div>
+
+        <script>
+        function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+         let s = today.getSeconds();
+         m = checkTime(m);
+         s = checkTime(s);
+         document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+         setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+</body>
+</html>
